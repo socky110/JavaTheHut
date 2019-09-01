@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.awt.Graphics; 
 import java.awt.Image;
@@ -9,7 +10,7 @@ import javax.swing.JFrame;
 
 public class CentralClass{
     public static JFrame jf = new JFrame("Window One");
-    
+    public static ImageMake background = new ImageMake("back1");
     public CentralClass(){
         this.init();
     }
