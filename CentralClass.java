@@ -33,8 +33,8 @@ public class CentralClass{
         }
         public void create(String src){
             try{
-                img = ImageIO.read(new File(CentralClass.class.getResource(src)));
-            }catch(IOExcepton e){
+                img = ImageIO.read(new File(CentralClass.class.getResource(src).getPath()));
+            }catch(IOException e){
                 e.printStackTrace();
             }
         }
