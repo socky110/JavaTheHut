@@ -13,7 +13,9 @@ import javax.swing.JFrame;
 
 public class CentralClass implements KeyListener{
     public static JFrame jf = new JFrame("Window One");
-    public static ImageMake background = new ImageMake("back1");
+    public static ImageMake back = new ImageMake("back1");
+    
+    public static int scale = 1;
     public CentralClass(){
         this.init();
     }
@@ -21,20 +23,20 @@ public class CentralClass implements KeyListener{
         jf.setSize(500, 500);
         jf.setBackground(Color.ORANGE);
         jf.setVisible(true);
-        new CentralClass();
+        jf.getContentPane().setKeyListener(new CentralClass());
     }
     public void init(){
         
     }
     public void keyTyped(KeyEvent e){
         if(e.getKeyCode == KeyEvent.VK_UP){
-            ;
+            back.setY2(back.getY2()-scale);
         }else if(e.getKeyCode == KeyEvent.VK_DOWN){
-            ;
+            back.setY2(back.getY2()+scale);
         }else if(e.getKeyCode == KeyEvent.VK_LEFT){
-            ;
+            back.setX2(back.getX2()-scale);
         }else if(e.getKeyCode == KeyEvent.VK_RIGHT){
-            ;
+            back.setX2(back.getX2()+scale);
         }
     }
     public void keyPressed(KeyEvent e){
@@ -57,6 +59,9 @@ public class CentralClass implements KeyListener{
             }catch(IOException e){
                 e.printStackTrace();
             }
+        }
+        public void paint(Graphics g){
+            g.drawImage(img.getScaledInstance(img.getWidth(CentralClass.INSTANCE) * scale, img.getHeight(CentralClass.INSTANCE) * scale), x, y, CentralClass.INSTANCE);
         }
         public int getX2(){
             return x;
