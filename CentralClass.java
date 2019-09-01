@@ -1,14 +1,17 @@
+package JavaTheHut;
 
-import java.awt.Color;
-import java.awt.Graphics; 
-import java.awt.Image;
-import java.awt.image.BufferedImage;
+//import java.awt.Color;
+//import java.awt.Graphics; 
+//import java.awt.Image;
+//import java.awt.image.BufferedImage;
+import java.awt.*;
+import java.awt.event.*;
 import java.io.File; 
 import java.io.IOException; 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-public class CentralClass{
+public class CentralClass implements KeyListener{
     public static JFrame jf = new JFrame("Window One");
     public static ImageMake background = new ImageMake("back1");
     public CentralClass(){
@@ -23,7 +26,7 @@ public class CentralClass{
     public void init(){
         
     }
-    static class ImageMake{
+    static class ImageMake extends Component{
         int x = 0;
         int y = 0;
         
